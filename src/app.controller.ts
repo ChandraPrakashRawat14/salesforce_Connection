@@ -22,7 +22,7 @@ export class AppController {
     const oauth2 = new jsforce.OAuth2({
       clientId: '3MVG9CecKwYCDceRMr3S_mwcNmu1rZP.1TPc3SFuEL9fR0FH.G3bkeYjJTrsLKFX9d53n5U6DhDsxnQR.Ilxn',
       clientSecret: '5C5772466700A1C9BB8B91F7200E4C549DD683D1582EF6467CBE38BF8939D77C',
-      redirectUri: `${req.protocol}://${req.get('host')}/getAccessToken`
+      redirectUri: `https://salesforceconnection.onrender.com/getAccessToken`
     });
     res.redirect(oauth2.getAuthorizationUrl({}));
 
