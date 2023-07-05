@@ -80,9 +80,9 @@ let AppController = exports.AppController = class AppController {
                     fetched: result.records.length
                 };
                 userInfos.push(tempObj2);
+                res.send(userInfos);
             });
         });
-        res.send(userInfos);
     }
 };
 __decorate([
