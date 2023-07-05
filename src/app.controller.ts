@@ -53,21 +53,23 @@ export class AppController {
         console.log("organization ID: " + res.organization_id);
         console.log("username: " + res.username);
         console.log("display name: " + res.display_name);
-        userInfos.push({
+        let tempObj1 ={
           id:res.user_id,
           org_id:res.organization_id,
           user_name:res.username,
           display_name:res.display_name
-        })
+        }
+        userInfos.push(tempObj1)
       });
       conn2.query("SELECT Id, Name FROM Account", function(err, result) {
         if (err) { return console.error(err); }
         console.log("total : " + result.totalSize);
         console.log("fetched : " + result.records.length);
-        userInfos.push({
+        let tempObj2 ={
           total:result.totalSize,
           fetched:result.records.length
-        })
+        }
+        userInfos.push(tempObj2)
       });
     });
     res.send(userInfos)
