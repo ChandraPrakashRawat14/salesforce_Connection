@@ -5,5 +5,5 @@ export declare class AppController {
     getHello(): string;
     GenerateFile(): Promise<void>;
     salesforceOauth2(req: any, res: any): void;
-    getAccessToken(req: any, res: any): void;
+    getAccessToken(req: any, res: any): any[];
 }

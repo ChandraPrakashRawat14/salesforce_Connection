@@ -22,7 +22,7 @@ export class AppController {
     const oauth2 = new jsforce.OAuth2({
       clientId: '3MVG9CecKwYCDceRMr3S_mwcNmnQ4e70OZ35.KsF2eSyogzu1epscVgLNTyV3CazSa6xZApWhIyaIUq7Uh_Pe',
       clientSecret: '238BF2525C5AEC84B82E5A274FAE3895039D6B4F05BEBEBB879FC5D997D22807',
-      redirectUri: `https://salesforceconnection.onrender.com/getAccessToken`
+      redirectUri: `${req.protocol}://${req.get('host')}/getAccessToken`
     });
     res.redirect(oauth2.getAuthorizationUrl({}));
 
@@ -68,7 +68,9 @@ export class AppController {
         })
       });
     });
-    
+    return userInfos
 
   }
+
+  
 }
