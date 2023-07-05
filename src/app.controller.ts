@@ -60,6 +60,7 @@ export class AppController {
           display_name:res.display_name
         }
         userInfos.push(tempObj1)
+        res.send(userInfos)
       });
       conn2.query("SELECT Id, Name FROM Account", function(err, result) {
         if (err) { return console.error(err); }
@@ -70,7 +71,7 @@ export class AppController {
           fetched:result.records.length
         }
         userInfos.push(tempObj2)
-        res.send(userInfos)
+        
       });
     });
   }
