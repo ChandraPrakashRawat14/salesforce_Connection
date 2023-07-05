@@ -30,7 +30,7 @@ export class AppController {
 
 
   @Get('/getAccessToken')
-  getAccessToken(@Req() req:any,@Res() res:any){
+  getAccessToken(@Req() req:any,@Res() ress:any){
     let userInfos = []
     const oauth2 = new jsforce.OAuth2({
       clientId: '3MVG9CecKwYCDceRMr3S_mwcNmnQ4e70OZ35.KsF2eSyogzu1epscVgLNTyV3CazSa6xZApWhIyaIUq7Uh_Pe',
@@ -60,7 +60,7 @@ export class AppController {
           display_name:res.display_name
         }
         userInfos.push(tempObj1)
-        res.send(userInfos)
+        ress.send(userInfos)
       });
       conn2.query("SELECT Id, Name FROM Account", function(err, result) {
         if (err) { return console.error(err); }

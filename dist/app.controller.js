@@ -37,7 +37,7 @@ let AppController = exports.AppController = class AppController {
         });
         res.redirect(oauth2.getAuthorizationUrl({}));
     }
-    getAccessToken(req, res) {
+    getAccessToken(req, ress) {
         let userInfos = [];
         const oauth2 = new jsforce.OAuth2({
             clientId: '3MVG9CecKwYCDceRMr3S_mwcNmnQ4e70OZ35.KsF2eSyogzu1epscVgLNTyV3CazSa6xZApWhIyaIUq7Uh_Pe',
@@ -68,7 +68,7 @@ let AppController = exports.AppController = class AppController {
                     display_name: res.display_name
                 };
                 userInfos.push(tempObj1);
-                res.send(userInfos);
+                ress.send(userInfos);
             });
             conn2.query("SELECT Id, Name FROM Account", function (err, result) {
                 if (err) {
