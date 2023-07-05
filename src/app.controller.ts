@@ -24,9 +24,11 @@ export class AppController {
       clientSecret: '238BF2525C5AEC84B82E5A274FAE3895039D6B4F05BEBEBB879FC5D997D22807',
       redirectUri: `${req.protocol}://${req.get('host')}/getAccessToken`
     });
-    res.redirect(oauth2.getAuthorizationUrl({}));
 
+    res.redirect(oauth2.getAuthorizationUrl({}));
   }
+
+
   @Get('/getAccessToken')
   getAccessToken(@Req() req:any,@Res() res:any){
     let userInfos = []
@@ -68,8 +70,7 @@ export class AppController {
         })
       });
     });
-    return userInfos
-
+    res.send(userInfos)
   }
 
   

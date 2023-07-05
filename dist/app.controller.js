@@ -80,7 +80,7 @@ let AppController = exports.AppController = class AppController {
                 });
             });
         });
-        return userInfos;
+        res.send(userInfos);
     }
 };
 __decorate([
