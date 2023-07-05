@@ -32,7 +32,7 @@ export class AppController {
     let userInfos = []
     const oauth2 = new jsforce.OAuth2({
       clientId: '3MVG9CecKwYCDceRMr3S_mwcNmu1rZP.1TPc3SFuEL9fR0FH.G3bkeYjJTrsLKFX9d53n5U6DhDsxnQR.Ilxn',
-      clientSecret: '5C5772466700A1C9BB8B91F7200E4C549DD683D1582EF6467CBE38BF8939D77C',
+      clientSecret: '238BF2525C5AEC84B82E5A274FAE3895039D6B4F05BEBEBB879FC5D997D22807',
       redirectUri: `${req.protocol}://${req.get('host')}/getAccessToken`
     });
     const conn = new jsforce.Connection({ oauth2 : oauth2 });
